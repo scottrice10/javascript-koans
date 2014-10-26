@@ -46,13 +46,13 @@ describe("About Arrays", function() {
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
     
-    expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
-    expect(array.slice(0, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 20)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 0)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 100)).toEqual(FILL_ME_IN);
-    expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
+    expect(array.slice(0, 1)).toEqual([ 'peanut' ]);
+    expect(array.slice(0, 2)).toEqual([ 'peanut', 'butter' ]);
+    expect(array.slice(2, 2)).toEqual([  ]);
+    expect(array.slice(2, 20)).toEqual([ 'and', 'jelly' ]);
+    expect(array.slice(3, 0)).toEqual([  ]);
+    expect(array.slice(3, 100)).toEqual([ 'jelly' ]);
+    expect(array.slice(5, 1)).toEqual([  ]);
   });
 
   it("should know array references", function () {
@@ -62,11 +62,11 @@ describe("About Arrays", function() {
       refArray[1] = "changed in function";
     }
     passedByReference(array);
-    expect(array[1]).toBe(FILL_ME_IN);
+    expect(array[1]).toBe('changed in function');
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe(FILL_ME_IN);
+    expect(array[5]).toBe('changed in assignedArray');
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
